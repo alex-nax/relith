@@ -46,6 +46,14 @@ moment you opened it — that is the fastest way to get a bug fixed. You can als
 [open an issue](https://github.com/alex-nax/relith/issues/new/choose); say which release and
 platform you are on.
 
+## AI disclosure
+
+ReLith is developed with extensive help from AI coding assistants (Anthropic's Claude, OpenAI's
+Codex and Moonshot's Kimi). They write much of the code under the maintainer's direction; the
+maintainer decides what is built, reviews the changes and plays every build on the target
+headsets before it is released. ReLith contains no game content — the game's art, audio and
+levels come from your own copy of No One Lives Forever.
+
 ## Support me
 
 ReLith is free. If you enjoy it and want to help it along:

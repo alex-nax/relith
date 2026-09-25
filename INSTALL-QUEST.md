@@ -32,37 +32,52 @@ you, uninstalling costs you the ~1.1 GB of game data too, and you will re-copy i
 
 ### 2. Back them up
 
-You do not have to work out which one you have — run both, and ignore the one that says
-the path does not exist:
+**With SideQuest:** plug the headset in and open SideQuest's file manager (the folder icon,
+top right, "Manage files on the headset").
 
-```
-adb pull /sdcard/nolf/Save ./relith-saves
-adb pull /sdcard/Android/data/net.relith.nolf/files/nolf/Save ./relith-saves
-```
-
-That folder holds `Slot01.sav`, `Slot02.sav`, … and `Quick.sav`. Your unlocked missions
-are not in there — they live in `autoexec.cfg` next to `Save/`, so pull that as well:
-
-```
-adb pull /sdcard/nolf/autoexec.cfg .
-adb pull /sdcard/Android/data/net.relith.nolf/files/nolf/autoexec.cfg .
-```
+1. Open the folder your game files are in (see the table above): `nolf`, or
+   `Android/data/net.relith.nolf/files/nolf`.
+2. Copy the **`Save`** folder to your computer (select it, then the download/save-to-computer
+   button). It holds `Slot01.sav`, `Slot02.sav`, … and `Quick.sav`.
+3. Copy **`autoexec.cfg`** from the same folder too — your unlocked missions live in it, not
+   in `Save`.
 
 Nothing else is yours: the mod, the config defaults and the fallback font all come out of
 the app itself on every launch.
 
+**With the command line (adb)** — run both, and ignore the one that says the path does not
+exist:
+
+```
+adb pull /sdcard/nolf/Save ./relith-saves
+adb pull /sdcard/Android/data/net.relith.nolf/files/nolf/Save ./relith-saves
+adb pull /sdcard/nolf/autoexec.cfg .
+adb pull /sdcard/Android/data/net.relith.nolf/files/nolf/autoexec.cfg .
+```
+
 ### 3. Uninstall, install, restore
+
+**With SideQuest:**
+
+1. Open SideQuest's installed-apps list (the grid icon, top right, "Currently installed
+   apps"), find **net.relith.nolf** and choose **Uninstall** from its options.
+2. Install the new APK (step 2 below) and launch it once with storage access granted
+   (step 3 below) so the folders exist again.
+3. In the file manager, open `nolf` and upload your saved **`Save`** folder and
+   **`autoexec.cfg`** back into it (drag them in, or use the upload button).
+
+**With the command line (adb):**
 
 ```
 adb uninstall net.relith.nolf
 ```
 
 Install the new APK (step 2 below) and launch it once with storage access granted (step 3
-below) so the folders exist again. Then push your saves back into the same path you pulled
-them from:
+below). Then push your saves back into the same path you pulled them from:
 
 ```
 adb push ./relith-saves/. /sdcard/nolf/Save/
+adb push ./autoexec.cfg /sdcard/nolf/
 ```
 
 ---
