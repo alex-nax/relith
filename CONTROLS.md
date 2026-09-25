@@ -3,8 +3,8 @@
 ## VR (Quest and PC VR)
 
 Which hand does what follows the **Main Hand** option (VR Options; right by default): the
-off hand moves, the main hand turns, jumps, crouches, fires and uses. Grips and stick-clicks
-work from either hand.
+off hand moves and steadies two-handed weapons, the main hand turns, jumps, crouches, fires
+and uses.
 
 | Control | Action |
 |---|---|
@@ -15,7 +15,8 @@ work from either hand.
 | Main-hand trigger | Fire |
 | A (main hand) | Jump |
 | B (main hand) | Use / activate; skips a cutscene shown on the panel |
-| Grip (either hand) | Use / activate |
+| Grip (main hand) | Use / activate |
+| Grip (off hand) | Hold a two-handed weapon with both hands |
 | Menu button | Pause |
 
 - Jump and crouch need a firm, mostly vertical push, so a turn flick never triggers them.
