@@ -186,7 +186,7 @@ least once with permission granted (step 3) — it creates the folder.
 
 ---
 
-ReLith engine code is MIT licensed. It bundles the community MODERNIZER mod by
+ReLith bundles the community MODERNIZER mod by
 **HeyThereCoffeee** (`haekb`) — *"This add-on is not made by or supported by
 Monolith Productions, or any of its affiliates and subsidiaries."* See `NOTICES` in
 the source repository. You must own a copy of the game.

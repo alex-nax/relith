@@ -10,7 +10,7 @@ Requires 64-bit Windows 10/11 and a GPU with OpenGL 4.5.
 ## 1. Install the Visual C++ runtime (once)
 
 If you have never installed it, get **Microsoft Visual C++ 2015–2022
-Redistributable (x64)** and run it. Without it the executables fail to start with a
+Redistributable (x64)** and run it. Without it the game fails to start with a
 missing `VCRUNTIME140.dll` / `MSVCP140.dll`.
 
 **Download (direct, from Microsoft):** <https://aka.ms/vs/17/release/vc_redist.x64.exe>
@@ -29,13 +29,12 @@ it inside `C:\Program Files`; the engine writes saves and config next to itself.
 
 ## 3. Copy your game files
 
-Copy the files below **straight into this folder**, next to the executables:
+Copy the files below **straight into this folder**, next to the executable:
 
 ```
 ReLith\
-  relith-nolf.exe
   relith-nolf-vr.exe
-  NOLF.REZ          <- your game data goes here, beside the exes
+  NOLF.REZ          <- your game data goes here, beside the exe
   NOLF2.REZ
   nolfu003.rez
   ...
@@ -79,17 +78,11 @@ Copy them straight from both discs into this folder.
 
 ## 4. Play
 
-- **Flat (monitor):** run `relith-nolf.exe`.
-- **VR:** start your OpenXR runtime first (SteamVR, Virtual Desktop, or the Meta/Oculus
-  app), put the headset on, then run **`relith-nolf-vr.exe`**. It starts in VR — no
-  command-line switch needed.
+Start your OpenXR runtime first (SteamVR, Virtual Desktop, or the Meta/Oculus app), put the
+headset on, then run **`relith-nolf-vr.exe`**. It starts in VR — no command-line switch
+needed.
 
-  If you want to run the VR build on the monitor for debugging, pass `--flat`.
-
-> **Preview note.** The two executables are the same code: the flat one still contains the
-> VR code, and neither refuses to start when no OpenXR runtime is present (it falls back to
-> flat with a line in the log). A genuinely VR-free flat build and a VR build that refuses
-> without a runtime is tracked as F1354.
+Playing flat on a monitor is not part of this release; it is coming later.
 
 ---
 
@@ -97,21 +90,20 @@ Copy them straight from both discs into this folder.
 
 | File | What it is |
 |---|---|
-| `relith-nolf.exe` | the game, flat/monitor |
-| `relith-nolf-vr.exe` | the game, VR through OpenXR (starts in VR; `--flat` to override) |
+| `relith-nolf-vr.exe` | the game, VR through OpenXR |
 | `SDL2.dll` | windowing and input |
 | `play-bik.dll` | Bink video decoding for the cutscenes (optional; skipped if absent) |
 | `relith.rez` | ReLith's own small pack (merged mission list, font fallback, first-run screens) |
 | `MODERNIZER.REZ` | the bundled community modernization mod — delete it to play without |
 | `relith_env.cfg` | shipped defaults, including the key the in-game bug reporter submits with |
-| `NOTICES` / `LICENSE` | licensing — engine code is MIT |
+| `NOTICES` | third-party licensing |
 
 ---
 
 ## Troubleshooting
 
 **It closes immediately / "Game data not found".** The archives must sit in this
-folder next to the executables (or in a `nolf\` subfolder) — not in a deeper
+folder next to `relith-nolf-vr.exe` (or in a `nolf\` subfolder) — not in a deeper
 subfolder, and not still inside a zip.
 
 **`VCRUNTIME140.dll` was not found.** Step 1 — install the VC++ redistributable
@@ -124,7 +116,7 @@ subfolder, and not still inside a zip.
 the chapter's levels.
 
 **Cutscenes are skipped.** Either `play-bik.dll` is missing from this folder, or
-you did not copy `Movies\` (it goes next to the executables, like the archives).
+you did not copy `Movies\` (it goes next to the executable, like the archives).
 
 **VR: nothing happens in the headset.** The usual cause is the OpenXR runtime not
 running, or not being the *active* one. Start SteamVR / Virtual Desktop first, then run
@@ -133,5 +125,4 @@ running, or not being the *active* one. Start SteamVR / Virtual Desktop first, t
 
 ---
 
-ReLith engine code is MIT licensed (`LICENSE`); see `NOTICES` for the third-party
-components. You must own a copy of the game.
+See THIRD-PARTY-NOTICES.md for the third-party components. You must own a copy of the game.

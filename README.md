@@ -68,6 +68,5 @@ ReLith bundles **MODERNIZER** by **HeyThereCoffeee (haekb)** —
 This add-on is not made by or supported by Monolith Productions, or any of its affiliates and subsidiaries.
 
 No One Lives Forever is © its rights holders; ReLith is an unofficial fan project and is not
-affiliated with or endorsed by them. The ReLith engine code is MIT licensed; the third-party
-components and their licences are listed in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)
-and [licenses/](licenses/).
+affiliated with or endorsed by them. The third-party components ReLith ships and their licences
+are listed in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md) and [licenses/](licenses/).

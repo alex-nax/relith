@@ -7,7 +7,7 @@ The components ReLith ships and their licences. Full licence texts are in
 # NOTICES
 
 Third-party and community content distributed with ReLith (the NOLF Improved
-sourceport). Our own engine code is MIT (see LICENSE); this file covers what we
+sourceport). This file covers what we
 ship alongside it. Licensing policy and the reasoning behind each decision live
 in `docs/distribution.md`.
 
