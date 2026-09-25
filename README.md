@@ -40,6 +40,13 @@ moment you opened it — that is the fastest way to get a bug fixed. You can als
 [open an issue](https://github.com/alex-nax/relith/issues/new/choose); say which release and
 platform you are on.
 
+## Support me
+
+ReLith is free. If you enjoy it and want to help it along:
+
+- **Ko-fi:** <https://ko-fi.com/alex0d>
+- **Ethereum and its L2s:** `0x98595c40A0f22F44239568F11060C6209E56D155`
+
 ## Credits
 
 ReLith bundles **MODERNIZER** by **HeyThereCoffeee (haekb)** —
