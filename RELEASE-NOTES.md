@@ -3,7 +3,7 @@
 ReLith is a modern sourceport of *No One Lives Forever*. Version numbers here are the
 **port's**, not the game's — the underlying game is still NOLF v1.003.
 
-## 0.4.0 — test build (not yet published)
+## 0.4.0 — 2026-09-25
 
 ### Quest — one-time reinstall required
 
@@ -19,6 +19,15 @@ ReLith is a modern sourceport of *No One Lives Forever*. Version numbers here ar
 - **Your device settings file carries over.** Runtime settings were renamed from `NOLF_*` to
   `RELITH_*` (and `nolf_env.cfg` to `relith_env.cfg`); an existing file is migrated once on
   first launch instead of being silently ignored.
+
+### Quest defaults
+
+- **Dynamic shadows are off by default on Quest** — some levels still lose frame time with them;
+  turn them on under Options → Performance. A fresh install could come up with shadows on,
+  because the Performance menu read the default before the renderer had set it.
+- **4× anti-aliasing is on by default**, and cutscenes play on the cinema panel.
+- **The "Game data not found" screen links to the install guide**; pull the trigger on it to open
+  the guide in the headset browser.
 
 ### VR hands and body
 
@@ -173,6 +182,10 @@ ReLith is a modern sourceport of *No One Lives Forever*. Version numbers here ar
   the Load/Save, Briefing, Objectives, Escape, Inventory and outfitting screens on their
   original layouts.
 - **The MODERNIZER credit is shown on the opening splash screen only**, not on the main menu.
+- **Settings menus now show the value the game really uses.** Mirrors, the cutscene mode and
+  anti-aliasing could read differently from the shipped default, and saving that menu once
+  quietly changed the setting. **Fade Bodies** now works (it never reached the game); it is
+  off by default, as in the original.
 
 ### Saves
 
@@ -196,8 +209,12 @@ ReLith is a modern sourceport of *No One Lives Forever*. Version numbers here ar
   no camera collision yet, so it will clip through walls in tight interiors.
 - **In menus and cutscenes the desktop mirrors the menu** the right way up, instead of a frozen
   world or the loading screen.
-- **The setup screen shows on the desktop** when game data is missing, with instructions for
-  copying it on a PC.
+- **Missing game data is reported in a Windows message box** that says which files to copy and
+  where, instead of starting the headset with nothing to show.
+- **The Display menu only offers what PC VR can honour.** Resolution is gone (your runtime's own
+  supersampling setting controls it, and eyes always render at 100% of its recommendation);
+  Anti-aliasing is hidden until PC VR has real MSAA (planned for 0.5); Refresh rate appears only
+  when the runtime supports changing it.
 
 ### Performance
 
