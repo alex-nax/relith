@@ -70,3 +70,6 @@ This add-on is not made by or supported by Monolith Productions, or any of its a
 No One Lives Forever is © its rights holders; ReLith is an unofficial fan project and is not
 affiliated with or endorsed by them. The third-party components ReLith ships and their licences
 are listed in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md) and [licenses/](licenses/).
+
+The cover images in [assets/](assets/) are based on ["Quest 3"](https://sketchfab.com/3d-models/quest-3-e5c334a9598c4e85bb182eebf15a2e32)
+by [Redcodi](https://sketchfab.com/Redcodi), licensed under [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/).
