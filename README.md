@@ -1,7 +1,5 @@
 # ReLith — a new engine for LithTech 2 games
 
-<img src="assets/relith-icon.png" alt="ReLith icon" width="96">
-
 ReLith is a modern replacement for Monolith's **LithTech 2.x** engine. It runs the original
 games' own data and game logic on a new engine built for today's hardware — with **VR on Meta
 Quest** and **PC VR** (OpenXR) as first-class modes.
@@ -15,6 +13,14 @@ game, and ReLith reads its original data files directly.
 [Download the latest release](https://github.com/alex-nax/relith/releases/latest)
 · [Install on Windows](INSTALL-WINDOWS.md) · [Install on Quest](INSTALL-QUEST.md)
 · [Controls](CONTROLS.md) · [Release notes](RELEASE-NOTES.md)
+
+## Watch
+
+Early VR footage of No One Lives Forever on ReLith — older builds; newer videos are coming.
+[Full playlist](https://www.youtube.com/playlist?list=PLNpcxzdnlCIw).
+
+[![Unexpected Turbulence & Rendezvous in Hamburg](https://i.ytimg.com/vi/RvH04wH5Si0/hqdefault.jpg)](https://www.youtube.com/watch?v=RvH04wH5Si0&list=PLNpcxzdnlCIw)
+[![Quest 3 playtest](https://i.ytimg.com/vi/6NsGBkCp9ro/hqdefault.jpg)](https://www.youtube.com/watch?v=6NsGBkCp9ro&list=PLNpcxzdnlCIw)
 
 ## Platforms
 
