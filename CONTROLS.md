@@ -27,5 +27,4 @@ work from either hand.
 
 ## Flat (monitor)
 
-Keyboard and mouse use the game's own controls and are rebindable in
-**Options → Controls**.
+Coming soon.

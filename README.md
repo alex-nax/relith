@@ -1,13 +1,16 @@
-# ReLith — No One Lives Forever, rebuilt
+# ReLith — a new engine for LithTech 2 games
 
 <img src="assets/relith-icon.png" alt="ReLith icon" width="96">
 
-ReLith is a modern sourceport of *The Operative: No One Lives Forever* (2000). It replaces
-the original LithTech engine with a new one and plays the campaign in **VR on Meta Quest**,
-in **PC VR** (OpenXR), or flat on a monitor.
+ReLith is a modern replacement for Monolith's **LithTech 2.x** engine. It runs the original
+games' own data and game logic on a new engine built for today's hardware — with **VR on Meta
+Quest** and **PC VR** (OpenXR) as first-class modes.
 
-**ReLith is the engine only. It ships no game content** — you need your own copy of
-No One Lives Forever, and ReLith reads its original data files directly.
+**Now playable:** *The Operative: No One Lives Forever* (2000).
+**Next:** *Aliens versus Predator 2* — in development on the same engine.
+
+**ReLith is the engine only. It ships no game content** — you need your own copy of the
+game, and ReLith reads its original data files directly.
 
 [Download the latest release](https://github.com/alex-nax/relith/releases/latest)
 · [Install on Windows](INSTALL-WINDOWS.md) · [Install on Quest](INSTALL-QUEST.md)
@@ -15,10 +18,11 @@ No One Lives Forever, and ReLith reads its original data files directly.
 
 ## Platforms
 
-| Platform | Mode | Package |
+| Platform | Mode | Status |
 |---|---|---|
-| Meta Quest (standalone) | VR | APK, sideloaded |
-| Windows 10/11, 64-bit | PC VR (OpenXR: SteamVR, Virtual Desktop, Meta app) and flat | ZIP |
+| Meta Quest (standalone) | VR | available — APK, sideloaded |
+| Windows 10/11, 64-bit | PC VR (OpenXR: SteamVR, Virtual Desktop, Meta app) | available — ZIP |
+| Windows, macOS | Flat (monitor) | coming soon |
 
 ## Start here
 

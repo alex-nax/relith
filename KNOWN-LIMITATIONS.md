@@ -6,9 +6,9 @@ ReLith is in preview. What is known and not yet addressed:
 - **Quest builds are sideloaded** (SideQuest or adb); there is no store listing.
 - **Third-person spectator** (`vr_spectator 3`) has no camera collision yet and clips through
   walls in tight interiors; spectator modes `1` and `2` are the reliable ones indoors.
-- **The flat and VR Windows executables are the same code.** The flat one still contains the
-  VR code, and the VR one falls back to a normal window when no OpenXR runtime is running
-  (the log says `falling back to flat mode`).
+- **Flat (monitor) play is not released yet.** It is coming soon; today ReLith is a VR release.
+- **The VR build falls back to a normal window** when no OpenXR runtime is running (the log
+  says `falling back to flat mode`) — start SteamVR, Virtual Desktop or the Meta app first.
 - **The bonus chapter** "Rest and Relaxation" needs `NOLFGOTY.REZ`; without it the chapter is
   greyed out.
 
