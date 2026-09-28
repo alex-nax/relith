@@ -3,6 +3,40 @@
 ReLith is a modern sourceport of *No One Lives Forever*. Version numbers here are the
 **port's**, not the game's — the underlying game is still NOLF v1.003.
 
+## 0.4.1 — 2026-09-28 — pre-release (PC VR beta for Valve Index controllers)
+
+A short-lived beta built for the reporter of GitHub issue #2 (Pimax Crystal Light + Valve
+Index). **Windows PC VR only; the Quest build is unchanged.** It carries the fixes for that report
+and, so the next report needs no back-and-forth, a diagnostics block in every Feedback report.
+
+### Index controllers
+
+- **The menu opens.** Index controllers have no menu button. Hold the objectives-panel button —
+  **left B** — for about half a second: the pause menu opens, and inside a menu the same hold
+  backs out. A tap still toggles the objectives panel. The first tutorial plate in the training
+  level says so when Index controllers are detected.
+- **Tooltips name Index buttons by hand** ("LEFT B"), since both Index controllers carry A and B.
+
+### Fixes from the report
+
+- **Footsteps land with the feet.** Steps come from the game's own footstep keys at the moment
+  a foot touches the ground (the old build fired two step trains at once), the running legs cycle
+  at the pace the run animation was authored for, and walking is two steps a second. A footstep
+  from a non-finite position is no longer played at full volume.
+- **Sun shadows no longer depend on where you look.** A shadowed balcony was lit at the screen
+  centre and shadowed at the edge of a wide field of view; the shadow now stays where it is.
+- **Hand calibration is symmetric.** The zombie-pose calibration used to land the left hand
+  about 20° off the right one in roll. **Recalibrate once** after installing this build (stand
+  straight, arms forward, click the main stick).
+
+### Reporting
+
+- **Every Feedback report now carries diagnostics**: the OpenXR runtime and headset, the bound
+  controller profile, your calibration values, the last frame-time window and the last few
+  hundred lines of the game log. Open the Feedback screen right after the moment you want to
+  report — the report also carries a save of that moment.
+- The build identifies itself as `0.4.1-beta` in the menu and in reports.
+
 ## 0.4.0 — 2026-09-25
 
 ### Quest — one-time reinstall required
