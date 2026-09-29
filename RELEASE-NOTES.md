@@ -3,11 +3,12 @@
 ReLith is a modern sourceport of *No One Lives Forever*. Version numbers here are the
 **port's**, not the game's — the underlying game is still NOLF v1.003.
 
-## 0.4.1 — 2026-09-28 — pre-release (PC VR beta for Valve Index controllers)
+## 0.4.1 — 2026-09-29 — PC VR
 
-A short-lived beta built for the reporter of GitHub issue #2 (Pimax Crystal Light + Valve
-Index). **Windows PC VR only; the Quest build is unchanged.** It carries the fixes for that report
-and, so the next report needs no back-and-forth, a diagnostics block in every Feedback report.
+**Windows PC VR only. The Quest build is unchanged: Quest players stay on
+[0.4.0](https://github.com/alex-nax/relith/releases/tag/v0.4.0).** This release rolls the
+0.4.1-beta for Valve Index controllers (GitHub issue #2) into a regular release. It adds the
+seated-play hands fix (issue #3), scope and swimming fixes, and a new water surface.
 
 ### Index controllers
 
@@ -17,7 +18,7 @@ and, so the next report needs no back-and-forth, a diagnostics block in every Fe
   level says so when Index controllers are detected.
 - **Tooltips name Index buttons by hand** ("LEFT B"), since both Index controllers carry A and B.
 
-### Fixes from the report
+### Fixes
 
 - **Footsteps land with the feet.** Steps come from the game's own footstep keys at the moment
   a foot touches the ground (the old build fired two step trains at once), the running legs cycle
@@ -29,13 +30,79 @@ and, so the next report needs no back-and-forth, a diagnostics block in every Fe
   about 20° off the right one in roll. **Recalibrate once** after installing this build (stand
   straight, arms forward, click the main stick).
 
+### VR
+
+- **Seated play: hands stay with your head.** Before your first Recenter View in Seated posture
+  the hands were measured from a default height above the floor while the head already sat at
+  the character's eye height, so a low sitter's hands ended up at table height (issue #3,
+  PSVR2). They now hang from the headset until you recenter.
+- **Scope: the sky shows in the lens.** The scope and zoom lenses, the cinematic screen and the
+  spectator view drew into targets without a stencil buffer, which sent the sky through a
+  fallback that drops sky walls beyond the far plane, exactly the walls a scope looks at. Those
+  targets now carry the same depth-stencil buffer as the eyes and paint the sky the same way.
+- **Scope: no more flicker or body jitter while sighted.** The scope's own render pass ran
+  first each frame and left two marks meant for the eyes: it handed the level's object culling
+  its narrow cone, so a frame now and then lost objects, people or the sky, and it threw away
+  the motion-smoothing history of everything it did not draw, which always included your own
+  body, so walking while sighted jittered. Aim, zoom and spectator passes now draw without
+  touching either.
+- **Swimming: the body swims, the feet stay quiet.** Only the scuba outfit carried swim
+  animations, so every other outfit kept its walk cycle under water and its footsteps kept
+  firing whenever the pool floor counted as ground; the full-body VR posture hid the body
+  while swimming. The swim clips now reach every outfit, footsteps follow the original rule
+  (none with the head under water, still on ladders), and the full body shows on the swim
+  clip.
+
+### Water
+
+- **Water has a surface now.** Water surfaces built from the level's water volumes (the
+  tropical basin among them) draw with drifting ripples, a reflection that strengthens at
+  grazing angles the way real water does, and a sun highlight. The authored colour and
+  transparency are unchanged. `r_water_quality 0` restores the previous flat two-pass look.
+- **The ripples never repeat.** The surface moves as drifting noise that never lines up with
+  itself, however far the water reaches from the level's centre — large open water such as a
+  sea no longer shows a checkerboard — and the reflection and the bent floor follow it.
+- **Pools mirror the room.** Water surfaces reflect the actual scene around them (walls,
+  fixtures, crane, people) instead of a generic chrome map, with the reflection wobbling on the
+  ripples. One pool per frame, chosen nearest; `r_water_reflect_area` sets how large a pool
+  may be to get it.
+- **Indoor pools catch the lamps.** The level's lights glint on the ripples (the nearest four
+  that reach the surface), so a basin lit by wall lamps no longer looks unlit.
+- **Water has depth.** The pool floor bends under the ripples, deep water shades toward the
+  pool's own colour while the shallows stay clear, and the hard line where the water met the
+  walls is gone. `r_water_refract 0` turns it off.
+- **Water keeps its authored look.** Water a level draws as nearly opaque (a grotto pond) shows
+  its own surface texture again instead of the bare floor beneath it, so whatever stands in it
+  no longer seems to float; clear pools take only a faint tint of it. Where a level lays a thin
+  surface over a larger body of water (a sea, a stream), the two draw as one surface instead of
+  the top one hiding the body's colour.
+- **Caustics.** Light focused by the ripples plays on the floor and walls under every pool, and
+  on whatever is in the water, from the same wave field that draws the surface, fading with
+  depth. Seen through the surface and while swimming. `r_water_caustics 0` turns it off.
+- **Splashes and a wake.** A bullet hitting the water from above rings the surface and throws
+  the game's own water ring, and wading or swimming at the surface leaves a trail of ripples
+  behind you. Both ride on the same wave field as the surface. `r_water_ripples 0` turns them
+  off.
+- **Under water, the surface overhead takes the fog.** It was the one crisp thing in a fogged
+  pool; it fogs with the walls now.
+- **Lights under the water show through it.** Glow sprites below the surface (the pool-wall
+  lamps in the Dumas basin) were painted over by the water; they refract with the wall behind
+  them now.
+
 ### Reporting
 
 - **Every Feedback report now carries diagnostics**: the OpenXR runtime and headset, the bound
   controller profile, your calibration values, the last frame-time window and the last few
   hundred lines of the game log. Open the Feedback screen right after the moment you want to
   report — the report also carries a save of that moment.
-- The build identifies itself as `0.4.1-beta` in the menu and in reports.
+- The build identifies itself as `0.4.1` in the menu and in reports.
+
+### Packaging
+
+- **The audio libraries are separate files now.** OpenAL Soft and FluidSynth (both LGPL) ship as
+  `OpenAL32.dll` and `libfluidsynth-3.dll` beside the executable, so anyone can replace them with
+  their own build. Their complete sources are in `licenses/sources/`; the separate "relink"
+  download is no longer produced. `LGPL-LIBRARIES.md` explains replacing a library.
 
 ## 0.4.0 — 2026-09-25
 

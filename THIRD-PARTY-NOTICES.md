@@ -65,8 +65,9 @@ on request by the same route.
 Bink video decoding, derived from LGPL sources (e.g. FFmpeg's bink decoder) and
 therefore distributed under the LGPL. SPDX: LGPL-2.1. Source: https://github.com/alex-nax/play-bik
 (the exact revision is in the ReLith gitlink). Licence and derivation:
-licenses/play-bik-LICENSE. Binary bundles include play-bik-source.tar.gz;
-RELINK.md explains rebuilding and replacing this runtime shared plugin.
+licenses/play-bik-LICENSE. Binary bundles include its complete source in
+licenses/sources/play-bik-source.tar.gz; LGPL-LIBRARIES.md explains rebuilding and
+replacing this runtime shared plugin.
 
 --------------------------------------------------------------------------------
 
@@ -82,27 +83,29 @@ Those resources retain their original terms and do not become MIT-licensed.
 
 --------------------------------------------------------------------------------
 
-## openal-soft (statically linked)
+## openal-soft (shared library)
 
 OpenAL Soft 1.24.1, by the OpenAL Soft contributors.
 Source: https://github.com/kcat/openal-soft/tree/1.24.1
 Original licence: LGPL-2.0-or-later; COPYING is the GNU Library General Public
 License version 2 and source headers permit any later version. ReLith uses the
 LGPL-2.1 option. The original text is in licenses/openal-soft-COPYING and the
-complete LGPL-2.1 text is in licenses/LGPL-2.1.txt. Binary bundles provide the
-actual corresponding source in relink.tar.gz (openal-soft-source.tar.gz), plus
-native objects/archives and the original link commands. See RELINK.md.
+complete LGPL-2.1 text is in licenses/LGPL-2.1.txt. It ships as a replaceable
+shared library (OpenAL32.dll on Windows, libopenal.so inside the Quest APK);
+binary bundles carry its complete corresponding source in
+licenses/sources/openal-soft-source.tar.gz. See LGPL-LIBRARIES.md.
 Verbatim COPYING source:
 https://raw.githubusercontent.com/kcat/openal-soft/1.24.1/COPYING
 
-## fluidsynth (statically linked)
+## fluidsynth (shared library)
 
 FluidSynth v2.5.3, by the FluidSynth contributors.
 SPDX: LGPL-2.1-or-later.
 Source: https://github.com/FluidSynth/fluidsynth/tree/v2.5.3
-The complete licence is in licenses/fluidsynth-LICENSE. Binary bundles provide
-the actual corresponding source in relink.tar.gz (fluidsynth-source.tar.gz),
-plus native objects/archives and the original link commands. See RELINK.md.
+The complete licence is in licenses/fluidsynth-LICENSE. It ships as a
+replaceable shared library (libfluidsynth-3.dll on Windows, libfluidsynth.so
+inside the Quest APK); binary bundles carry its complete corresponding source in
+licenses/sources/fluidsynth-source.tar.gz. See LGPL-LIBRARIES.md.
 Verbatim licence source:
 https://raw.githubusercontent.com/FluidSynth/fluidsynth/v2.5.3/LICENSE
 
